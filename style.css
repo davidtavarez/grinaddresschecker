@@ -1,0 +1,45 @@
+html,
+body {
+  height: 100%;
+  background-color: #000000;
+}
+
+body {
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.form-address {
+  width: 100%;
+  max-width: 700px;
+  padding: 15px;
+  margin: auto;
+}
+.form-address .form-control {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.form-address .form-control:focus {
+  z-index: 2;
+}
+.form-address input[type="text"] {
+  margin-bottom: 15px;
+  max-width: 640px;
+  text-align: center;
+  font-size: 15px;
+}
+.form-address button {
+  margin-bottom: 25px;
+  max-width: 460px;
+}
+.alert {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+}
