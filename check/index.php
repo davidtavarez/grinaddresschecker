@@ -8,7 +8,7 @@ function validate_url($url)
     return filter_var($url, FILTER_VALIDATE_URL) ? true : false;
 }
 
-if (!array_key_exists('wallet', $_POST))
+if (array_key_exists('wallet', $_POST) === false)
 {
     http_response_code(400);
     exit("missing arguments");
@@ -58,6 +58,10 @@ curl_close($ch);
 http_response_code($httpcode);
 if ($httpcode !== 200)
 {
+    http_response_code(404);
     exit("not reachable");
 }
-exit("reachable");
+else
+{
+    exit("reachable");
+}
