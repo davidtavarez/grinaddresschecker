@@ -14,7 +14,9 @@ if (array_key_exists('wallet', $_POST) === false)
     exit("missing arguments");
 }
 
-$url = rtrim(trim($_POST['wallet'], '/'));
+$address = trim($_POST['wallet']);
+$url = rtrim($address);
+$url = rtrim($url, "/");
 
 if (validate_url($url === false))
 {
