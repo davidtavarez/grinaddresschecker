@@ -1,18 +1,18 @@
 <?php
 if (!array_key_exists('wallet', $_POST))
 {
-    http_response_code(404);
+    http_response_code(400);
     exit("missing arguments");
 }
 
-$wallet = trim($_POST['wallet']);
+$url = rtrim(trim($_POST['wallet'], '/'));
 
-$url = $wallet;
-if (filter_var($wallet, FILTER_VALIDATE_URL) === false)
+if (strpos($url, '.onion') === false)
 {
-    $url = "http://{$wallet}.grinplusplus.com/";
+    http_response_code(400);
+    exit("invalid arguments");
 }
-$url = rtrim($url, "/"); // remove trailing slash
+
 $address = "{$url}/v2/foreign";
 $params = json_encode(array(
     "jsonrpc" => "2.0",
@@ -52,4 +52,3 @@ if ($httpcode !== 200)
     exit("not reachable");
 }
 exit("reachable");
-
