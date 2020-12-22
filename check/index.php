@@ -22,6 +22,11 @@ if (validate_url($url === false))
     exit("invalid arguments");
 }
 
+if (strpos($url, "grinplusplus.com") !== false)
+{
+    $url = str_replace(".grinplusplus.com", ".onion", $url);
+}
+
 $address = "{$url}/v2/foreign";
 $params = json_encode(array(
     "jsonrpc" => "2.0",
