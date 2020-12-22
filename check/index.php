@@ -17,7 +17,7 @@ $wallet = trim($_POST['wallet']);
 $wallet = rtrim($wallet);
 $wallet = rtrim($wallet, "/");
 
-if (validate_url($wallet === false))
+if (strlen($wallet) === 56)
 {
     $wallet = "http://{$wallet}.onion";
 }
