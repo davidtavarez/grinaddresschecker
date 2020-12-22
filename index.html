@@ -14,7 +14,6 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
     <link href="./style.css" rel="stylesheet" />
   </head>
-
   <body class="text-center">
     <form class="form-address">
       <img class="mb-4" src="./grinpp.png" alt="Grin++" width="120" />
@@ -23,7 +22,7 @@
         type="text"
         id="address"
         class="form-control mx-auto"
-        placeholder="http(s) URL"
+        placeholder=".onion address"
         required
         autofocus
       />
@@ -31,7 +30,7 @@
         id="check"
         class="btn btn-light btn-block mx-auto"
         type="button"
-        style="display: block;"
+        style="display: block"
       >
         Check if this Wallet is Reachable
       </button>
@@ -39,7 +38,7 @@
         id="spinner"
         class="spinner-border text-light"
         role="status"
-        style="display: none;"
+        style="display: none"
       >
         <span class="sr-only">Loading...</span>
       </div>
@@ -55,7 +54,7 @@
     <div
       id="fail"
       class="alert alert-danger alert-dismissible"
-      style="display: none;"
+      style="display: none"
       role="alert"
     >
       <strong>Holy guacamole!</strong> This Wallet is not Reachable 😫
@@ -71,7 +70,7 @@
     <div
       id="success"
       class="alert alert-success alert-dismissible"
-      style="display: none;"
+      style="display: none"
       role="alert"
     >
       <strong>Awesome!</strong> This Wallet is Reachable, you shouldn't have any
