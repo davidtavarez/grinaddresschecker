@@ -5,7 +5,7 @@ function check(address, onSuccess, onError, onComplete) {
     data: {
       wallet: address.trim(),
     },
-    timeout: 20000,
+    timeout: 30000,
     success: function (data) {
       onSuccess();
     },
