@@ -46,7 +46,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
 curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
-curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+curl_setopt($ch, CURLOPT_TIMEOUT, 40);
 curl_setopt($ch, CURLOPT_FRESH_CONNECT, true);
 curl_setopt($ch, CURLOPT_TCP_NODELAY, false);
 curl_setopt($ch, CURLOPT_TCP_FASTOPEN, true);
