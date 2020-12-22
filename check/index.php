@@ -1,4 +1,13 @@
 <?php
+function validate_url($url)
+{
+    $path = parse_url($url, PHP_URL_PATH);
+    $encoded_path = array_map('urlencode', explode('/', $path));
+    $url = str_replace($path, implode('/', $encoded_path) , $url);
+
+    return filter_var($url, FILTER_VALIDATE_URL) ? true : false;
+}
+
 if (!array_key_exists('wallet', $_POST))
 {
     http_response_code(400);
@@ -7,7 +16,7 @@ if (!array_key_exists('wallet', $_POST))
 
 $url = rtrim(trim($_POST['wallet'], '/'));
 
-if (strpos($url, '.onion') === false)
+if (validate_url($url === false))
 {
     http_response_code(400);
     exit("invalid arguments");
