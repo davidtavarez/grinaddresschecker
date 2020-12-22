@@ -22,7 +22,7 @@ if (validate_url($url === false))
     exit("invalid arguments");
 }
 
-if (strpos($url, "grinplusplus.com") !== false)
+if (strpos($url, ".grinplusplus.com") !== false)
 {
     $url = str_replace(".grinplusplus.com", ".onion", $url);
 }
