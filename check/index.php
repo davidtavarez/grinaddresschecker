@@ -73,7 +73,8 @@ http_response_code($httpcode);
 
 if ($httpcode !== 200) {
     http_response_code(404);
-    exit("not reachable");
+    exit($httpcode);
 } else {
-    exit("reachable");
+    http_response_code(200);
+    exit($httpcode);
 }
