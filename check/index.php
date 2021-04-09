@@ -72,10 +72,12 @@ curl_close($ch);
 http_response_code($httpcode);
 
 header('Content-type: application/json');
+$error = "";
 if ($httpcode !== 200) {
     http_response_code(404);
+    $error = "not reachable";
 } else {
     http_response_code(200);
 }
 
-exit;
+exit("{\"error\": \"{$error}\"}");
