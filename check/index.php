@@ -6,8 +6,6 @@ use Base32\Base32;
 
 const TOR_PROXY = "127.0.0.1:9050";
 
-$_POST['wallet'] = "grin1mj6h5dslvn9y8dkg9l0xktrhruzq34g3tsq8hy937fymcnhutlxqkuf6xx";
-
 if (array_key_exists('wallet', $_POST) === false) {
     http_response_code(400);
     exit("missing arguments");
