@@ -71,10 +71,11 @@ $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 http_response_code($httpcode);
 
+header('Content-type: application/json');
 if ($httpcode !== 200) {
     http_response_code(404);
-    exit($httpcode);
 } else {
     http_response_code(200);
-    exit($httpcode);
 }
+
+exit;
