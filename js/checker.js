@@ -3,7 +3,7 @@ function check(address, onSuccess, onError, onComplete) {
     type: "POST",
     url: "/check/",
     data: {
-      wallet: address.trim(),
+      wallet: address,
     },
     timeout: 30000,
     success: function (data) {
