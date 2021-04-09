@@ -8,17 +8,12 @@ function check(address, onSuccess, onError, onComplete) {
       wallet: address,
     },
     success: function (data, status) {
-      console.log("success");
-      console.log(status);
       onSuccess();
     },
     error: function (data, status) {
-      console.log("error");
       onError();
     },
     complete: function (xhr, status) {
-      console.log("complete");
-      console.log(status);
       onComplete();
     },
   });
